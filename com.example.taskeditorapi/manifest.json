@@ -1,0 +1,19 @@
+{
+  "main": "index.bundle.js",
+  "usesPermissions": [],
+  "supportedLanguages": [],
+  "requiredPackageNames": [],
+  "type": "ETC",
+  "screens": [
+    {
+      "name": "Main Screen",
+      "id": "MainScreen",
+      "messageFilters": [
+        {
+          "action": "dart.message.action.MAIN",
+          "category": "dart.message.category.SCREEN"
+        }
+      ]
+    }
+  ]
+}

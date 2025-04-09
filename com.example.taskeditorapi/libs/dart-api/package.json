@@ -1,0 +1,21 @@
+{
+    "name": "dart-api",
+    "version": "3.0.0",
+    "description": "Doosan Robotics's SW Platform API",
+    "author": {
+        "name": "Doosan Robotics",
+        "email": "person.equals.future@doosan.com",
+        "url": "https://www.doosanrobotics.com"
+    },
+    "files": [
+        "dart-api.ts",
+        "dart-api-math.ts"
+    ],
+    "devDependencies": {
+        "@emotion/react": "^11.7.1",
+        "@types/react-dom": "^17.0.11",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "main": "dart-api.ts"
+}
