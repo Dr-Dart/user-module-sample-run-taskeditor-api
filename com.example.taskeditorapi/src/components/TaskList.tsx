@@ -27,10 +27,6 @@ const TaskList = ({ moduleContext }: Props) => {
         </a>
       </p>
 
-      <p style={{ marginTop: '20px', fontSize: '1.6rem' }}>
-        selected task : {selectedTask}
-      </p>
-
       <button
         type="button"
         onClick={() => {
@@ -47,20 +43,9 @@ const TaskList = ({ moduleContext }: Props) => {
         Get task lists
       </button>
 
-      <button
-        style={{
-          margin: '10px 0',
-          border: '1px solid black',
-          padding: '8px 12px',
-          cursor: 'pointer',
-        }}
-        type="button"
-        onClick={() => {
-          selectProgram(selectedTask);
-        }}
-      >
-        Click here to set selected program as current program
-      </button>
+      <p style={{ marginTop: '20px', fontSize: '1.6rem' }}>
+        selected task : {selectedTask}
+      </p>
 
       {taskList.map((task) => (
         <div
@@ -75,6 +60,23 @@ const TaskList = ({ moduleContext }: Props) => {
           task name : {task},
         </div>
       ))}
+
+      {selectedTask && (
+        <button
+          style={{
+            margin: '10px 0',
+            border: '1px solid black',
+            padding: '8px 12px',
+            cursor: 'pointer',
+          }}
+          type="button"
+          onClick={() => {
+            selectProgram(selectedTask);
+          }}
+        >
+          Click here to set selected program as current program
+        </button>
+      )}
     </section>
   );
 };

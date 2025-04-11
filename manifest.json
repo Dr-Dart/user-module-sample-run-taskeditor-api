@@ -1,7 +1,7 @@
 {
     "name": "TaskeditorAPI",
     "packageName": "com.example.taskeditorapi",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "sdkVersion": "3",
     "icon": "assets/images/icon.png",
     "drscModulePackageFile": "drsc_com.example.taskeditorapi.dm",

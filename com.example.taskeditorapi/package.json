@@ -1,6 +1,6 @@
 {
   "name": "com.example.taskeditorapi",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "main": "./src/index.tsx",
   "private": true,
   "license": "DOOSAN",
