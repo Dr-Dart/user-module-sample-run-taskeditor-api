@@ -13,6 +13,7 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import DrlUtils from './DrlUtils';
 import { useTranslation } from 'react-i18next';
+import TaskList from './components/TaskList';
 
 // IIFE for register a function to create an instance of main class which is inherited BaseModule.
 (() => {
@@ -49,7 +50,6 @@ interface IAppProps {
 }
 function App(props: IAppProps) {
   const moduleContext = props.moduleContext;
-  const { t } = useTranslation();
 
   return (
     <div
@@ -59,6 +59,8 @@ function App(props: IAppProps) {
         'position': 'relative',
       }}
       data-gjs-type="ContainerAbsolute"
-    ></div>
+    >
+      <TaskList moduleContext={moduleContext} />
+    </div>
   );
 }

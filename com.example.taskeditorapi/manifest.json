@@ -6,7 +6,7 @@
   "type": "ETC",
   "screens": [
     {
-      "name": "Main Screen",
+      "name": "Task Editor API",
       "id": "MainScreen",
       "messageFilters": [
         {
