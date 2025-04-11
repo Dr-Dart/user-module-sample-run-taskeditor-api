@@ -3,6 +3,7 @@ import {
   Context,
   IModuleChannel,
   IModuleComponentBinder,
+  IModuleScreenManager,
   IModuleServiceManager,
   Message,
   ModuleContext,
@@ -10,6 +11,7 @@ import {
 
 let serviceManager: IModuleServiceManager | null = null;
 let serviceChannel: IModuleChannel | null = null;
+let screenManager: IModuleScreenManager | null = null;
 
 // use service for remote control
 const message = new Message({
@@ -17,6 +19,13 @@ const message = new Message({
   category: Message.CATEGORY_SERVICE,
   packageName: 'com.dart.module.taskeditor',
   componentId: 'RemoteControlService',
+});
+
+// open Task Editor screen
+const screenMessage = new Message({
+  action: Message.ACTION_MAIN,
+  category: Message.CATEGORY_SCREEN,
+  packageName: 'com.dart.module.taskeditor',
 });
 
 type Props = {
@@ -30,6 +39,10 @@ const useTaskList = ({ moduleContext }: Props) => {
     serviceManager = moduleContext.getSystemManager(
       Context.MODULE_SERVICE_MANAGER,
     ) as IModuleServiceManager;
+
+    screenManager = moduleContext.getSystemManager(
+      Context.MODULE_SCREEN_MANAGER,
+    ) as IModuleScreenManager;
   }, []);
 
   useEffect(() => {
@@ -91,6 +104,8 @@ const useTaskList = ({ moduleContext }: Props) => {
   const selectProgram = async (task: string) => {
     if (serviceChannel) {
       serviceChannel.send('select_task', task);
+
+      await screenManager?.startModuleScreen(screenMessage);
     } else {
       console.error('Fail to run program: channel is null');
     }
